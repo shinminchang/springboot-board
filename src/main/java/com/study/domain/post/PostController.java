@@ -46,4 +46,18 @@ public class PostController {
 
         return "post/view";
     }
+
+    @PostMapping("/post/update.do")
+    public String updatePost(final PostRequest params) {
+        postService.updatePost(params);
+
+        return "redirect:/post/list.do";
+    }
+
+    @PostMapping("/post/delete.do")
+    public String deletePost(final Long id) {
+        postService.deletePost(id);
+
+        return "redirect:/post/list.do";
+    }
 }
