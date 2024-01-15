@@ -3,6 +3,7 @@ package com.study;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.study.common.dto.SearchDto;
 import com.study.domain.post.PostMapper;
 import com.study.domain.post.PostRequest;
 import com.study.domain.post.PostResponse;
@@ -27,7 +28,8 @@ public class PostMapperTest {
 		params.setNoticeYn(false);
 		postMapper.save(params);
 
-		List<PostResponse> posts = postMapper.findAll();
+		SearchDto search = new SearchDto();
+		List<PostResponse> posts = postMapper.findAll(search);
 		System.out.println("전체 게시글 개수는 : " + posts.size() + "개입니다.");
 	}
 
@@ -67,8 +69,10 @@ public class PostMapperTest {
 
 	@Test
 	void delete() {
-		System.out.println("삭제 이전의 전체 게시글 개수는 : " + postMapper.findAll().size() + "개 입니다.");
+		SearchDto search = new SearchDto();
+
+		System.out.println("삭제 이전의 전체 게시글 개수는 : " + postMapper.findAll(search).size() + "개 입니다.");
 		postMapper.deleteById(1L);
-		System.out.println("삭제 이후의 전체 게시글 개수는 : " + postMapper.findAll().size() + "개 입니다.");
+		System.out.println("삭제 이후의 전체 게시글 개수는 : " + postMapper.findAll(search).size() + "개 입니다.");
 	}
 }
