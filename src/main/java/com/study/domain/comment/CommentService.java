@@ -20,6 +20,7 @@ public class CommentService {
     @Transactional
     public Long saveComment(final CommentRequest params) {
         commentMapper.save(params);
+
         return params.getId();
     }
 
@@ -40,6 +41,7 @@ public class CommentService {
     @Transactional
     public Long updateComment(final CommentRequest params) {
         commentMapper.update(params);
+
         return params.getId();
     }
 
@@ -51,6 +53,7 @@ public class CommentService {
     @Transactional
     public Long deleteComment(final Long id) {
         commentMapper.deleteById(id);
+
         return id;
     }
 
