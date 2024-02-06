@@ -9,8 +9,8 @@ import java.util.Map;
 @Getter
 @AllArgsConstructor
 public class MessageDto {
-    private String message;
-    private String redirectUri;
-    private RequestMethod method;
-    private Map<String, Object> data;
+    private String message;             // alert 문구
+    private String redirectUri;         // 이동 URL
+    private RequestMethod method;       // request method
+    private Map<String, Object> data;   // 전달할 데이터
 }

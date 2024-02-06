@@ -21,6 +21,7 @@ $(document).ready(function(){
 		$('body').toggleClass('snb_none');
 		$(window).trigger('resize');
 	});
+
 	// cm_list
 	$(".cm_list > div > a").click(function(){
 		var submenu = $(this).next("div.hide_view");
@@ -46,6 +47,7 @@ $(document).ready(function(){
 		var fileName = $(this).val().split('/').pop().split('\\').pop();
 		$(this).parent().siblings("input[type='text']").val(fileName);
 	});
+
 	// 파일업로드 미리보기
 	$('.file_upload input[type=file]').change(function(event) {
 		var tmppath = URL.createObjectURL(event.target.files[0]);
@@ -59,11 +61,13 @@ function layerPop(popName){
 	$layer.fadeIn(500).css('display', 'inline-block').wrap( '<div class="overlay_t"></div>');
 	$('body').css('overflow','hidden');
 }
+
 function layerPopClose(){
 	$(".popLayer").hide().unwrap( '');
 	$('body').css('overflow','auto');
 	$(".popLayer video").each(function() { this.pause(); this.load(); });
 }
+
 function layerPopClose2(popName){
 	$("#"+ popName).hide().unwrap( '');
 	$('body').css('overflow','auto');

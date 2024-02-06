@@ -23,6 +23,7 @@ public class LoggerAspect {
                                         "";
 
         log.debug(type + name + "." + joinPoint.getSignature().getName() + "()");
+
         return joinPoint.proceed();
     }
 

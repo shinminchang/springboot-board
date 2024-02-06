@@ -73,12 +73,10 @@
                 renderPostInfo();
             }
 
-
             // 등록일 초기화
             function initCreatedDate() {
                 document.getElementById('createdDate').value = dayjs().format('YYYY-MM-DD');
             }
-
 
             // 게시글 저장(수정)
             function savePost() {
@@ -115,14 +113,12 @@
                 })
             }
 
-
             // 등록일 초기화
             function initCreatedDate() {
                 document.getElementById('createdDate').value = dayjs().format('YYYY-MM-DD');
             }
 
-
-            // 게시글 저장(수정)
+            // 게시글 저장
             function savePost() {
                 const form = document.getElementById('saveForm');
                 const fields = [form.title, form.writer, form.content];
